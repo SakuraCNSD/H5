@@ -1,15 +1,16 @@
-import React from "react";
-import styles from "./index.less";
-import Top from "@/component/Top";
-import Block from "@/component/RandomBlockList";
-import introduce from "@/assets/Image/introduce.png";
-import left from "@/assets/Image/left.png";
-import right from "@/assets/Image/right.png";
-import scope from "@/assets/Image/scope.png";
-export default class index extends React.PureComponent {
+import React from 'react';
+import styles from './index.less';
+import Top from '@/component/Top';
+import Block from '@/component/RandomBlockList';
+import withScroll from '@/component/withScroll/withScroll';
+import introduce from '@/assets/Image/introduce.png';
+import left from '@/assets/Image/left.png';
+import right from '@/assets/Image/right.png';
+import scope from '@/assets/Image/scope.png';
+class index extends React.PureComponent {
   jump = () => {
-    this.props.history.push("/content");
-  }
+    this.props.history.push('/content');
+  };
   render() {
     return (
       <div className={styles.root}>
@@ -31,13 +32,16 @@ export default class index extends React.PureComponent {
           </div>
           <div className={styles.btn}>
             <i className={styles.mask} />
-            <span className={styles.title} onClick={this.jump}>案例展示</span>
+            <span className={styles.title} onClick={this.jump}>
+              案例展示
+            </span>
           </div>
         </div>
         <div className={styles.blockContainer}>
           <Block />
         </div>
       </div>
-    )
+    );
   }
 }
+export default withScroll(index);
